@@ -1,0 +1,70 @@
+html, body {
+    margin: 0;
+    height: 100%; /* maybe 100% also acceptable */
+}  
+
+.mainContent {
+    margin: 0px;
+    display: flex; /* can also use viewport units (height: 100vh) */
+    height: 100%; /* needs to take the parents height, alternative: body {display: flex} */
+    flex-direction: column; /* stacks them vertically */
+}
+
+header,footer {
+    background-color: rgb(51, 214, 220);
+    text-align: center;
+}
+
+main {
+    flex: 1; /* takes the remaining height of the "container" div */
+    overflow: auto; /* to scroll just the "main" div */
+}
+
+.flexboxView {
+    overflow: auto;
+    display: flex;
+    flex-flow: row wrap; /*stacks them horizontally and wrap when minimised */
+    background-color: #42424200;
+}
+ 
+.flexboxView > div {
+    overflow: auto;
+    flex-flow: row wrap; 
+    padding: 3px;
+    margin: 10px;
+    background-color: rgba(51, 214, 220, 0.164);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    text-align: left;
+}
+
+#result {
+    width: 31vw; 
+    height: 41vw;
+}
+
+button {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border : 2px solid lightskyblue;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;  
+    padding: 5px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.089);
+    /* text-shadow: 3px 2px 1px #9daef5; */
+    box-shadow: 6px 5px 24px lightskyblue;
+}
+
+a:hover {
+    color: rgb(160, 95, 95);
+}
