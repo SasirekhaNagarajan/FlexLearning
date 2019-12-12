@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Flex Application</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="implement.js"></script>
     <script defer src="api.js"></script>
 </head>
 <body>
     <div class="mainContent">
-        <header id="head"><h2>Flex Containers</h2></header>
         <main>
+            <div id='header'><h2>Flex Containers</h2></div>
             <div class="flexboxView">
                 <!-- Flex 1 : To display the gif image -->
                 <div>
-                        <img style="width: 31vw; height: 41vw" src="https://66.media.tumblr.com/0515a622e957db1cae9d68390ad31660/tumblr_ndpfk90SQY1tlc35wo1_500.gif" alt="Text cannot be displayed">
+                        <img style="width: 100%; height: 100%" src="https://66.media.tumblr.com/0515a622e957db1cae9d68390ad31660/tumblr_ndpfk90SQY1tlc35wo1_500.gif" alt="Text cannot be displayed">
                 </div>
 
                 <!-- Flex 2 : To display the youtube video -->
@@ -31,22 +31,34 @@
                         </object></div>  -->
         
                         <!-- using iframe     -->
-                        <iframe style="width: 31vw; height: 41vw" 
-                        src="https://www.youtube.com/embed/7LcFZNuZaVY?autoplay=1" 
+                        <iframe style="width: 100%; height: 100%" 
+                        src="https://www.youtube.com/embed/zocngunDY34?autoplay=1" 
                         allowfullscreen>
                         </iframe>
                     </div>
 
                     <!-- Flex 3 : To display the data from other server  -->
-                    <div>
-                        <button id="load" type="button" onclick="loadJSON(0)" >Click here to see data...</button>
-                        <button id="add" type="button" onclick="loadJSON(1)" style="float: right;">ADD</button>
-                        <br><br>
-                        <div id="result" ></div>
+                    <div id='api'>
+                        <div id='actions'>
+                            <button id="load" type="button" onclick="loadJSONBtn()" >Click here to see data...</button>
+                            <button id="mulDel" type="button" onclick="multipleDeleteBtn()" style="float: right;">DELETE</button>
+                            <button id="add" type="button" onclick="addButton()" style="float: right;">ADD</button>
+                        </div>
+                        
+                        <div id="result" style="width: 100%;height: auto;"></div>
+                        <div id="empty" style="display: none;">
+                                <span class="emptySpan">
+                                    <svg fill="currentColor" width="16px" height="16px" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            <span id='errormsg'>Empty value given</span> 
+                        </div>
                     </div>
             </div>
+            <div id='footer'><h2><a href="https://www.mocky.io/" target="_blank"> Click for creating Mock API </a></h2></div>
         </main>
-        <footer id="foot"><h2><a href="https://www.mocky.io/" target="_blank"> Click for creating Mock API </a></h2></footer>
     </div>
 </body>
 </html>

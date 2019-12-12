@@ -1,70 +1,134 @@
-html, body {
-    margin: 0;
-    height: 100%; /* maybe 100% also acceptable */
-}  
-
-.mainContent {
-    margin: 0px;
-    display: flex; /* can also use viewport units (height: 100vh) */
-    height: 100%; /* needs to take the parents height, alternative: body {display: flex} */
-    flex-direction: column; /* stacks them vertically */
+:root {
+    --bgcolor1: rgb(51, 214, 220);
+    --bgcolor2: #42424200;
+    --bgcolor3: rgba(51, 214, 220, 0.164);
+    --bgcolor4: whitesmoke;
+    --bgcolor5: rgba(0, 0, 255, 0.089);
+    --border-color1: lightskyblue;
+    --border-color2: black;
+    --border-color3: rgba(0, 162, 255, 0.966);
+    --hover-color1: rgb(160, 95, 95);
+    --error-color:#d93025;
 }
 
-header,footer {
-    background-color: rgb(51, 214, 220);
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;    
+}
+
+body, .mainContent {
+    height: 100%;
+    margin: 0;    
+}
+
+.mainContent > #header > h2{
+    margin: 0;
+}
+
+#header, #footer {
+    margin: 0;
     text-align: center;
+    min-height: 55px;    
+    background-color: var(--bgcolor1);
 }
 
 main {
-    flex: 1; /* takes the remaining height of the "container" div */
-    overflow: auto; /* to scroll just the "main" div */
+    margin: 0;    
+    display: flex;
+    height: 100%;
+    flex-flow: column;
 }
 
 .flexboxView {
-    overflow: auto;
+    height: 100%;
+    flex: 1;
     display: flex;
-    flex-flow: row wrap; /*stacks them horizontally and wrap when minimised */
-    background-color: #42424200;
+    flex-direction: row;
+    background-color: var(--bgcolor2);
 }
- 
+
 .flexboxView > div {
+    flex: 1;
+    margin: 3px;
+    background-color: var(--bgcolor3);
+}
+
+.mainContent > main > .flexboxView > #api {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent > main > .flexboxView > #api > #result{
     overflow: auto;
-    flex-flow: row wrap; 
-    padding: 3px;
-    margin: 10px;
-    background-color: rgba(51, 214, 220, 0.164);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid black;
-    text-align: left;
-}
-
-#result {
-    width: 31vw; 
-    height: 41vw;
 }
 
 button {
-    background-color: whitesmoke;
+    background-color: var(--bgcolor4);
     border-radius: 5px;
-    border : 2px solid lightskyblue;
+    border : 2px solid var(--border-color1);
     font-family: "Times New Roman", Times, serif;
     font-size: 15px;  
     padding: 5px;
+    margin: 5px;
 }
 
 button:hover {
-    background-color: rgba(0, 0, 255, 0.089);
-    /* text-shadow: 3px 2px 1px #9daef5; */
-    box-shadow: 6px 5px 24px lightskyblue;
+    background-color: var(--bgcolor5);
+    box-shadow: 4px 3px 16px var(--border-color1);
+}
+
+input {
+    background-color: var(--bgcolor4);
+    border-radius: 5px;
+    border : 2px solid var(--border-color1);;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;  
 }
 
 a:hover {
-    color: rgb(160, 95, 95);
+    color: var(--hover-color1);
+}
+
+.content {
+    display : inline-flex;
+    border: 1px solid var(--border-color1);
+    height: auto;
+    width: 97%;
+    align-items: center;
+    padding: 5px;
+    overflow: auto;
+}
+
+#options {
+    display: none;
+}
+
+#empty, .emptySpan {
+    color: var(--error-color);
+    line-height: normal;
+    margin-top: 2px;
+    color: var(--error-color);
+    font-size: 12px;
+}
+
+#td, #dd {
+    padding: 2px;
+    margin: 3px;
+}
+
+#title, #etitle {
+    width: 300px;
+    height: 25px;
+    border: 1px solid var(--border-color3);
+    border-radius: 5px;
+    background-color: var(--bgcolor4);
+}
+
+#desc, #edesc {
+    width: 300px;
+    height: 45px;
+    border: 1px solid var(--border-color3);
+    border-radius: 5px;
+    background-color: var(--bgcolor4);
 }
